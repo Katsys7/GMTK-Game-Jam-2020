@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://level_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Medieval Melancholy.ogg" type="AudioStream" id=4]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 25.2632, 538.468 )
+
+[node name="Level_2" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 621.832, 526.165 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3315.6, 372.595 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2557.82, 138.465 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2399.21, 516.095 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1223.52, 513.578 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1027.16, 135.947 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.427
+pitch_scale = 2.36
+autoplay = true

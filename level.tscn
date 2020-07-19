@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://parallax-mountain-bg.png" type="Texture" id=2]
+[ext_resource path="res://parallax-mountain-montain-far.png" type="Texture" id=3]
+[ext_resource path="res://parallax-mountain-foreground-trees.png" type="Texture" id=4]
+[ext_resource path="res://parallax-mountain-trees.png" type="Texture" id=5]
+[ext_resource path="res://parallax-mountain-mountains.png" type="Texture" id=6]
+[ext_resource path="res://level.gd" type="Script" id=7]
+
+[sub_resource type="LineShape2D" id=1]
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -5.18652, -335.741 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1769500, 0, 0, 1769523, 0, 0, 1900549, 0, 0, 1900580, 2, 0, 1900600, 1, 0, 1900601, 1, 0, 1900602, 1, 0, 1966115, 1, 0, 1966117, 1, 0, 1966138, 1, 0, 1966139, 1, 0, 2031626, 1, 0, 2031627, 1, 0, 2031640, 1, 0, 2031641, 1, 0, 2031650, 1, 0, 2031651, 1, 0, 2031654, 1, 0, 2097168, 2, 0, 2097175, 1, 0, 2097176, 1, 0, 2097202, 1, 0, 2097206, 1, 0, 2162692, 2, 0, 2162703, 1, 0, 2162738, 1, 0, 2162742, 1, 0, 2228226, 2, 0, 2228238, 1, 0, 2228239, 3, 0, 2228240, 3, 0, 2228245, 1, 0, 2228250, 1, 0, 2228251, 1, 0, 2228252, 1, 0, 2228257, 2, 0, 2228262, 2, 0, 2228267, 2, 0, 2228274, 1, 0, 2228278, 1, 0, 2228286, 0, 0, 2359295, 1, 0, 2293760, 1, 0, 2293761, 1, 0, 2293763, 1, 0, 2293764, 3, 0, 2293768, 1, 0, 2293769, 1, 0, 2293770, 1, 0, 2293771, 1, 0, 2293772, 1, 0, 2293773, 1, 0, 2293774, 3, 0, 2293775, 3, 0, 2293776, 3, 0, 2293779, 1, 0, 2293780, 1, 0, 2293781, 1, 0, 2293782, 1, 0, 2293783, 1, 0, 2293784, 1, 0, 2293785, 1, 0, 2293786, 1, 0, 2293788, 1, 0, 2293789, 1, 0, 2293790, 1, 0, 2293791, 1, 0, 2293792, 1, 0, 2293794, 1, 0, 2293795, 1, 0, 2293796, 1, 0, 2293797, 1, 0, 2293804, 1, 0, 2293805, 1, 0, 2293806, 1, 0, 2293807, 1, 0, 2293808, 1, 0, 2293809, 1, 0, 2293810, 1, 0, 2293811, 0, 0, 2293814, 1, 0, 2293815, 1, 0, 2293816, 1, 0, 2293817, 1, 0, 2293818, 1, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="bg" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 37.6471, 37.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.01, 0.01 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2( 320, 0 )
+
+[node name="far mountain" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2( 0, 256 )
+scale = Vector2( 2.58823, 2.15 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.1, 0.1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground5"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="close mountain" type="Sprite" parent="ParallaxBackground5/ParallaxLayer"]
+position = Vector2( 0, 440 )
+scale = Vector2( 0.941176, 1 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.3, 0.3 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="far trees" type="Sprite" parent="ParallaxBackground3/ParallaxLayer"]
+position = Vector2( 0, 320 )
+scale = Vector2( 0.941176, 1.75 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground4"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="close trees" type="Sprite" parent="ParallaxBackground4/ParallaxLayer"]
+position = Vector2( 0, 448 )
+scale = Vector2( 0.941176, 0.95 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Floor_Of_Death" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor_Of_Death"]
+position = Vector2( 918.999, 268 )
+scale = Vector2( 10, 0.1 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Floor_Of_Death" to="." method="_on_Floor_Of_Death_body_entered"]
